@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.tsx
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import React from 'react';
+import AppNavigator from './src/navigation';
+import { LogBox, SafeAreaView } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// Main App Component
+const App: React.FC = () => (
+  <SafeAreaProvider>
+    <SafeAreaView style={{ flex: 1}}>
+      <AppNavigator />
+    </SafeAreaView>
+  </SafeAreaProvider>
+);
+
+// disable the logs for dependancy
+LogBox.ignoreLogs(['']);
+export default App;
