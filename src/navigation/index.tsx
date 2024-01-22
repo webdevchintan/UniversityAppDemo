@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, Alert } from 'react-native';
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
-import { HomeScreen, IntroScreen } from '../screens';
+import { HomeScreen, IntroScreen, MyProfileScreen, SettingScreen } from '../screens';
 import { navigationRef, storeLocalData } from '../utils/helper';
 
 
@@ -15,22 +15,22 @@ const Stack = createStackNavigator<AppStackParamList>();
 const Tab = createBottomTabNavigator<MainTabsParamList>();
 
 // Profile Screen
-const ProfileScreen = () => {
-  return (
-    <View>
-      <Text>My Profile Screen</Text>
-    </View>
-  );
-};
+// const ProfileScreen = () => {
+//   return (
+//     <View style={{justifyContent:'center',alignItems:'center'}}>
+//       <Text>My Profile Screen</Text>
+//     </View>
+//   );
+// };
 
 // Settings Screen
-const SettingsScreen = () => {
-  return (
-    <View>
-      <Text>Settings Screen</Text>
-    </View>
-  );
-};
+// const SettingsScreen = () => {
+//   return (
+//     <View style={{justifyContent:'center', alignItems:'center'}}>
+//       <Text>Settings Screen</Text>
+//     </View>
+//   );
+// };
 
 const LogoutScreen = () => null;
 
@@ -92,7 +92,7 @@ const MainStack = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={MyProfileScreen}
         options={{
           tabBarLabel: 'My Profile',
           tabBarIcon: ({ color, size }) => (
@@ -102,7 +102,7 @@ const MainStack = () => {
       />
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
+        component={SettingScreen}
         options={{
           tabBarLabel: 'Settings',
           tabBarIcon: ({ color, size }) => (
@@ -115,7 +115,6 @@ const MainStack = () => {
         component={LogoutScreen}
         options={{
           tabBarLabel: 'Logout',
-          
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="logout" size={size} color={color} onPress={handleLogout}/>
           ),

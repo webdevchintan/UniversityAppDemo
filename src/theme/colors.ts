@@ -11,7 +11,8 @@ const Colors = {
     fh:'#A91D30',
     da:'#5A2F59',
     mc:'#0B7799',
-    wv:'#15325F'
+    wv:'#15325F',
+    cardBg: '#009E65'
     // Add more colors as needed
   };
   
