@@ -5,9 +5,9 @@ UniversityAppDemo is a mobile application tailored for university students, prov
 ## Features
 
 - **View List of Courses:** Browse through a comprehensive list of available courses.
-- **Access Course Details:** Gain in-depth information about each course.
+<!-- - **Access Course Details:** Gain in-depth information about each course.
 - **Navigate to Different Departments:** Explore various university departments seamlessly.
-- **Get University Updates:** Stay informed with the latest updates from the university.
+- **Get University Updates:** Stay informed with the latest updates from the university. -->
 
 ## Installation
 
