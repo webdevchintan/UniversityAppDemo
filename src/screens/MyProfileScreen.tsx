@@ -7,13 +7,13 @@ import { CustomText } from "../components";
 
 type ProfileNavigationProp = StackNavigationProp<MainTabsParamList, 'Profile'>;
 type StudentData = {
-    studentId?: number;
-    firstName?: string;
-    lastName?:string;
-    enrolled?: string;
-    status?: string;
-    iDCardNumber?: number;
-    imageURL?: string
+    studentId: number;
+    firstName: string;
+    lastName:string;
+    enrolled: string;
+    status: string;
+    iDCardNumber: number;
+    imageURL: string
 };
 
 interface MyProfileScreenProps {
@@ -24,7 +24,7 @@ interface MyProfileScreenProps {
 const MyProfileScreen: React.FC<MyProfileScreenProps> = ({ navigation }) => {
      // State hooks for loading status and student data
      const [isLoading, setLoading] = useState(false);
-     const [data, setData] = useState<StudentData[]>();
+     const [data, setData] = useState<StudentData>();
  
      // Function to fetch Student data from API
      const getStudentDetail = async () => {
@@ -48,10 +48,10 @@ const MyProfileScreen: React.FC<MyProfileScreenProps> = ({ navigation }) => {
             <View style={styles.container}>
                     <View style={styles.cardBlock}>
                         <View style={styles.block1Style}>
-                            <CustomText  content={data.status} color={Colors.white} fontSize={18} fontWeight="bold"/>
-                            <CustomText  content={data.enrolled} color={Colors.white} fontSize={16} fontWeight="bold"/>
+                            <CustomText  content={data?.status} color={Colors.white} fontSize={18} fontWeight="bold"/>
+                            <CustomText  content={data?.enrolled} color={Colors.white} fontSize={16} fontWeight="bold"/>
                         </View>
-                        <Image source={{uri: data.imageURL}} style={styles.imageStyle}/>
+                        <Image source={{uri: data?.imageURL}} style={styles.imageStyle}/>
                         <View>
                             <CustomText  content={`${data.firstName} ${data.lastName}` } color={Colors.white} fontSize={24} fontWeight="bold"/>
                         </View>
